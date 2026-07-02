@@ -1,0 +1,43 @@
+{
+  "game": "Hide & Seek Camouflage",
+  "website": "https://focusnakub.github.io/FriendHub/",
+  "version": "v0.3.5",
+  "status": "Alpha",
+  "progress": 65,
+  "statusItems": [
+    {
+      "icon": "✅",
+      "title": "Lobby / Queue",
+      "description": "ระบบรอผู้เล่นและเริ่มรอบ",
+      "className": "done-text"
+    },
+    {
+      "icon": "✅",
+      "title": "Random Role",
+      "description": "สุ่ม Hunter และ Hider",
+      "className": "done-text"
+    },
+    {
+      "icon": "🔄",
+      "title": "Catch System",
+      "description": "กำลังปรับระบบจับให้สมบูรณ์",
+      "className": "doing-text"
+    },
+    {
+      "icon": "⏳",
+      "title": "Ranking / Weekly Event",
+      "description": "ระบบคะแนนและอีเวนต์ในอนาคต",
+      "className": "later-text"
+    }
+  ],
+  "patchNotes": [
+    {
+      "version": "v0.3.5",
+      "changes": [
+        "+ Improved Discord DevBot Embed",
+        "+ Connected project.json to Discord update",
+        "+ Website data system prepared"
+      ]
+    }
+  ]
+}
