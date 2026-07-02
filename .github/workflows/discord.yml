@@ -1,4 +1,4 @@
-name: Discord Website Update
+name: FriendHub DevBot v3
 
 on:
   push:
@@ -10,28 +10,116 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read project.json
+        id: project
+        run: |
+          GAME=$(jq -r '.game // "FriendHub"' project.json)
+          VERSION=$(jq -r '.version // "Unknown"' project.json)
+          STATUS=$(jq -r '.status // "Development"' project.json)
+          PROGRESS=$(jq -r '.progress // 0' project.json)
+          WEBSITE=$(jq -r '.website // "https://focusnakub.github.io/FriendHub/"' project.json)
+
+          PATCH=$(jq -r '
+            if (.patchNotes and (.patchNotes | length > 0)) then
+              .patchNotes[0].changes | map("• " + .) | join("\n")
+            else
+              "• No patch notes"
+            end
+          ' project.json)
+
+          STATUS_ITEMS=$(jq -r '
+            if (.statusItems and (.statusItems | length > 0)) then
+              .statusItems | map(.icon + " " + .title + " — " + .description) | join("\n")
+            else
+              "No status items"
+            end
+          ' project.json)
+
+          {
+            echo "game<<EOF"
+            echo "$GAME"
+            echo "EOF"
+
+            echo "version<<EOF"
+            echo "$VERSION"
+            echo "EOF"
+
+            echo "status<<EOF"
+            echo "$STATUS"
+            echo "EOF"
+
+            echo "progress<<EOF"
+            echo "$PROGRESS%"
+            echo "EOF"
+
+            echo "website<<EOF"
+            echo "$WEBSITE"
+            echo "EOF"
+
+            echo "patch<<EOF"
+            echo "$PATCH"
+            echo "EOF"
+
+            echo "status_items<<EOF"
+            echo "$STATUS_ITEMS"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Send Discord Embed
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          GAME: ${{ steps.project.outputs.game }}
+          VERSION: ${{ steps.project.outputs.version }}
+          STATUS: ${{ steps.project.outputs.status }}
+          PROGRESS: ${{ steps.project.outputs.progress }}
+          WEBSITE: ${{ steps.project.outputs.website }}
+          PATCH: ${{ steps.project.outputs.patch }}
+          STATUS_ITEMS: ${{ steps.project.outputs.status_items }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          COMMIT_URL: ${{ github.event.head_commit.url }}
+          ACTOR: ${{ github.actor }}
+          REPOSITORY: ${{ github.repository }}
         run: |
-          curl -H "Content-Type: application/json" \
-          -X POST \
-          -d '{
-            "username": "Hide & Seek Dev Bot",
-            "embeds": [{
-              "title": "🎮 Hide & Seek Camouflage — Website Updated",
-              "description": "มีการอัปเดตเว็บไซต์แล้ว",
-              "color": 3447003,
-              "fields": [
-                {
-                  "name": "🌐 Website",
-                  "value": "https://focusnakub.github.io/FriendHub/"
-                },
-                {
-                  "name": "📦 Repository",
-                  "value": "FriendHub"
+          jq -n \
+            --arg username "FriendHub DevBot" \
+            --arg title "🎮 $GAME — Website Updated" \
+            --arg desc "อัปเดตเว็บไซต์และข้อมูลโปรเจกต์แล้ว" \
+            --arg version "$VERSION $STATUS" \
+            --arg progress "$PROGRESS" \
+            --arg patch "$PATCH" \
+            --arg statusItems "$STATUS_ITEMS" \
+            --arg website "$WEBSITE" \
+            --arg commit "$COMMIT_MESSAGE" \
+            --arg commitUrl "$COMMIT_URL" \
+            --arg actor "$ACTOR" \
+            --arg repo "$REPOSITORY" \
+            '{
+              username: $username,
+              embeds: [{
+                title: $title,
+                description: $desc,
+                color: 5763719,
+                fields: [
+                  { name: "📦 Version", value: $version, inline: true },
+                  { name: "📊 Progress", value: $progress, inline: true },
+                  { name: "✨ Latest Changes", value: $patch, inline: false },
+                  { name: "🧭 Current Status", value: $statusItems, inline: false },
+                  { name: "📝 Commit", value: $commit, inline: false },
+                  { name: "👤 Updated by", value: $actor, inline: true },
+                  { name: "📦 Repository", value: $repo, inline: true },
+                  { name: "🌐 Website", value: $website, inline: false },
+                  { name: "🔗 Commit Link", value: $commitUrl, inline: false }
+                ],
+                footer: {
+                  text: "FriendHub Studio • GitHub Pages Auto Update"
                 }
-              ]
-            }]
-          }' \
-          "$DISCORD_WEBHOOK"
+              }]
+            }' > payload.json
+
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d @payload.json \
+               "$DISCORD_WEBHOOK"
