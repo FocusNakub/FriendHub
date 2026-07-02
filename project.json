@@ -2,9 +2,9 @@
   "hubName": "FriendHub",
   "game": "Hide & Seek Camouflage",
   "website": "https://focusnakub.github.io/FriendHub/",
-  "version": "v0.3.4",
+  "version": "v0.3.5",
   "status": "Alpha",
-  "progress": 65,
+  "progress": 68,
   "kicker": "FRIENDHUB GAME SHOWCASE",
   "titleHtml": "HIDE & SEEK<br><span>CAMOUFLAGE</span>",
   "heroText": "เว็บไซต์หลักของ FriendHub สำหรับโชว์เกมและโหมดต่าง ๆ โดยตอนนี้โฟกัสที่ Hide & Seek Camouflage",
@@ -189,19 +189,54 @@
       "className": "done-text"
     },
     {
+      "icon": "✅",
+      "title": "Discord DevBot v3",
+      "description": "เชื่อมข้อมูลเว็บกับ Discord และแจ้งอัปเดตอัตโนมัติ",
+      "className": "done-text"
+    },
+    {
+      "icon": "✅",
+      "title": "Interactive Game Flow UI",
+      "description": "ปรับ UI พร้อม Preview ภาพใหญ่ของแต่ละขั้นตอน",
+      "className": "done-text"
+    },
+    {
       "icon": "🔄",
       "title": "Catch System",
-      "description": "กำลังปรับระบบจับให้สมบูรณ์",
+      "description": "กำลังพัฒนาระบบจับของ Hunter",
       "className": "doing-text"
     },
     {
       "icon": "⏳",
-      "title": "Win / Lose",
-      "description": "เงื่อนไขจบรอบและประกาศผู้ชนะ",
+      "title": "Win / Lose System",
+      "description": "ระบบตัดสินผู้ชนะหลังจบรอบ",
+      "className": "later-text"
+    },
+    {
+      "icon": "⏳",
+      "title": "Results Screen",
+      "description": "หน้าสรุปผลหลังจบรอบ",
+      "className": "later-text"
+    },
+    {
+      "icon": "⏳",
+      "title": "Next Round System",
+      "description": "ระบบวนกลับ Lobby และเริ่มรอบใหม่",
       "className": "later-text"
     }
   ],
   "patchNotes": [
+    {
+      "version": "v0.3.5",
+      "changes": [
+        "+ ปรับปรุง Discord DevBot v3",
+        "+ เชื่อมข้อมูลเว็บไซต์กับ project.json",
+        "+ ปรับปรุง Interactive Game Flow",
+        "+ ตัดคำอธิบายในการ์ดฝั่งซ้าย",
+        "+ เพิ่ม Preview ภาพใหญ่เมื่อเลือกแต่ละ Step",
+        "- ปรับปรุงโครงสร้างเว็บไซต์ให้รองรับการพัฒนาต่อ"
+      ]
+    },
     {
       "version": "v0.3.4",
       "changes": [
@@ -228,6 +263,10 @@
     }
   ],
   "devBlog": [
+    {
+      "title": "Developer Update #2",
+      "text": "อัปเดตครั้งนี้ เน้นพัฒนาไปที่เครื่องมือสำหรับการติดตามงาน และปรับปรุงเว็บและเชื่อมกับ Discord พร้อมทั้งออกแบบ Interactive Game Flow ใหม่"
+    },
     {
       "title": "Developer Update #1",
       "text": "โฟกัสระบบหลักให้เล่นได้ก่อน: Lobby → Queue → Role → Camouflage → End Round"
