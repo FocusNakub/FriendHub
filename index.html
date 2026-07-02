@@ -211,7 +211,7 @@ h1 span{color:#4ade80;text-shadow:0 0 30px rgba(74,222,128,.45)}
 .img-catch{background-image:url("images/catch.webp")}
 .img-ui{background-image:url("images/ui.webp")}
 .img-map{background-image:url("images/map.webp")}
-.img-roadmap{background-image:url("images/roadmap.webp")}
+.img-gameplay{background-image:url("images/roadmap.webp")}
 .img-patch{background-image:url("images/patch.webp")}
 .img-gallery{background-image:url("images/gallery.webp")}
 .img-devblog{background-image:url("images/devblog.webp")}
@@ -399,8 +399,6 @@ h1 span{color:#4ade80;text-shadow:0 0 30px rgba(74,222,128,.45)}
   <a href="#lobby">Lobby</a>
   <a href="#gameplay">Gameplay</a>
   <a href="#flow">Flow</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#roadmap">Roadmap</a>
   <a href="#patch">Patch Notes</a>
 </nav>
 
@@ -412,7 +410,7 @@ h1 span{color:#4ade80;text-shadow:0 0 30px rgba(74,222,128,.45)}
     <p>เว็บไซต์โชว์เกมซ่อนหาแนวพรางตัว ใช้ไฟล์ภาพ WebP แยกจาก HTML เพื่อให้ภาพคม โหลดไว และอัปเดตง่าย</p>
     <div class="btns">
       <a class="btn" href="#lobby">Explore Project</a>
-      <a class="btn secondary" href="#gallery">View Gallery</a>
+      <a class="btn secondary" href="#flow">View Game Flow</a>
     </div>
     <div class="stats">
       <div class="stat"><b>5–7</b><span>Players</span></div>
@@ -498,118 +496,15 @@ h1 span{color:#4ade80;text-shadow:0 0 30px rgba(74,222,128,.45)}
   </div>
 </section>
 
-<section class="section reveal" id="gallery">
-  <div class="section-head">
-    <h2>📸 Project Gallery</h2>
-    <p>รวมภาพ Showcase ของระบบหลักในเกม เปลี่ยนภาพได้ง่ายโดยแก้ไฟล์ในโฟลเดอร์ images</p>
-  </div>
-  <div class="cards">
-    <div class="card" onclick="openLightbox('Lobby Key Art','Lobby, Campfire, Queue Board และ Safe Zone','img-lobby')">
-      <div class="card-img img-lobby"></div><div class="card-body-small"><h3>🏠 Lobby</h3><p>พื้นที่รอก่อนเริ่มเกม</p></div>
-    </div>
-    <div class="card" onclick="openLightbox('Gameplay Key Art','Hunter ตามหาและ Hider ซ่อนตัว','img-gameplay')">
-      <div class="card-img img-gameplay"></div><div class="card-body-small"><h3>🌲 Gameplay</h3><p>บรรยากาศการไล่หา</p></div>
-    </div>
-    <div class="card" onclick="openLightbox('Hunter Key Art','Hunter ถือไฟฉายและค้นหา Hider','img-hunter')">
-      <div class="card-img img-hunter"></div><div class="card-body-small"><h3>🔦 Hunter</h3><p>บทบาทผู้ล่า</p></div>
-    </div>
-    <div class="card" onclick="openLightbox('Hider Key Art','Hider แปลงร่างเป็นสิ่งของในแมพ','img-hider')">
-      <div class="card-img img-hider"></div><div class="card-body-small"><h3>🌿 Hider</h3><p>ซ่อนและเอาตัวรอด</p></div>
-    </div>
-    <div class="card" onclick="openLightbox('UI Mockup','Role UI, Timer, Queue Count และ Transform Prompt','img-ui')">
-      <div class="card-img img-ui"></div><div class="card-body-small"><h3>🖥️ UI</h3><p>หน้าจอสำหรับเล่นจริง</p></div>
-    </div>
-    <div class="card" onclick="openLightbox('Map Overview','Forest, Spawn และ Hide Area','img-map')">
-      <div class="card-img img-map"></div><div class="card-body-small"><h3>🗺️ Map</h3><p>โครงสร้างแมพหลัก</p></div>
-    </div>
-    <div class="card" onclick="openLightbox('Catch System','ระบบตรวจจับการจับของ Hunter','img-catch')">
-      <div class="card-img img-catch"></div><div class="card-body-small"><h3>🎯 Catch</h3><p>ระบบตรวจระยะจับ</p></div>
-    </div>
-    <div class="card" onclick="openLightbox('Roadmap Artwork','แผนพัฒนาต่อของโปรเจกต์','img-roadmap')">
-      <div class="card-img img-roadmap"></div><div class="card-body-small"><h3>🚀 Roadmap</h3><p>แผนพัฒนาระบบใหม่</p></div>
-    </div>
-  </div>
-</section>
 
 
-<section class="section reveal" id="roadmap">
-  <div class="section-head">
-    <h2>🚀 Roadmap</h2>
-    <p>แผนพัฒนาเกม Hide & Seek Camouflage อัปเดตตามสถานะของโปรเจกต์</p>
-  </div>
 
-  <div class="proto-detail">
-    <div class="proto-panel">
-      <h3>Progress: v0.3.4 Alpha</h3>
-      <div class="progress-wrap"><div class="progress-bar"></div></div>
-      <p style="color:#cbd5e1;line-height:1.6;">
-        ตอนนี้โปรเจกต์อยู่ในช่วงวางระบบหลัก: Lobby, Queue, Random Role, Camouflage และกำลังต่อยอด Catch System
-      </p>
 
-      <div class="roadmap-list">
-        <div class="roadmap-item">
-          <b class="done-text">✅ Lobby System</b>
-          ห้องรอผู้เล่น จุดเริ่มเกม และพื้นที่สำหรับ Queue
-        </div>
-        <div class="roadmap-item">
-          <b class="done-text">✅ Queue System</b>
-          ระบบเข้าคิว นับจำนวนผู้เล่น และเตรียมเริ่มรอบ
-        </div>
-        <div class="roadmap-item">
-          <b class="done-text">✅ Random Role</b>
-          สุ่ม Hunter และ Hider พร้อมแสดง Role UI
-        </div>
-        <div class="roadmap-item">
-          <b class="done-text">✅ Camouflage Base</b>
-          Hider สามารถแปลงเป็น Object เช่น Bush, Flower, Clover
-        </div>
-        <div class="roadmap-item">
-          <b class="doing-text">🔄 Catch System</b>
-          กำลังทำระบบจับ ตรวจระยะ และสรุปผลการจับ
-        </div>
-        <div class="roadmap-item">
-          <b class="doing-text">🔄 Lobby Room Polish</b>
-          ปรับห้อง Lobby ให้ดูดีขึ้น พร้อมป้าย Update และ Safe Zone
-        </div>
-        <div class="roadmap-item">
-          <b class="later-text">⏳ Ranking System</b>
-          ระบบคะแนน Win / Lose และ Leaderboard
-        </div>
-        <div class="roadmap-item">
-          <b class="later-text">⏳ Weekly Event</b>
-          อีเวนต์รายสัปดาห์สำหรับเล่นกับเพื่อน
-        </div>
-      </div>
-    </div>
-
-    <div class="proto-panel">
-      <h3>Next Goals</h3>
-      <div class="patch-list">
-        <div class="patch-item">
-          <b>1. ทำ Catch System ให้เล่นได้จริง</b>
-          ตรวจระยะ Hunter กับ Hider, ป้องกันจับผิดเป้าหมาย, อัปเดตสถานะผู้เล่น
-        </div>
-        <div class="patch-item">
-          <b>2. ปรับ UI ให้ชัดขึ้น</b>
-          Role UI, Timer, Queue Count และ Transform Prompt
-        </div>
-        <div class="patch-item">
-          <b>3. เพิ่มภาพประกอบ Key Art</b>
-          Lobby, Hunter, Hider, Gameplay, Catch System, UI และ Map
-        </div>
-        <div class="patch-item">
-          <b>4. เตรียม v0.4.0</b>
-          เป้าหมายคือให้เล่นทดสอบกับเพื่อนได้ครบ Loop: Lobby → Queue → Gameplay → End Round
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section reveal" id="patch">
   <div class="section-head">
     <h2>📋 Patch Notes & Dev Blog</h2>
-    <p>หน้าอัปเดตโปรเจกต์ ใช้เก็บประวัติการพัฒนา Roadmap และสิ่งที่กำลังทำอยู่</p>
+    <p>หน้าอัปเดตโปรเจกต์ ใช้เก็บประวัติการพัฒนา  และสิ่งที่กำลังทำอยู่</p>
   </div>
   <div class="proto-detail">
     <div class="proto-panel">
@@ -633,7 +528,7 @@ h1 span{color:#4ade80;text-shadow:0 0 30px rgba(74,222,128,.45)}
       <h3 style="margin-top:22px;">Dev Blog</h3>
       <div class="blog-list">
         <div class="blog-item"><b>Developer Update #1</b>โฟกัสระบบหลักให้เล่นได้ก่อน: Lobby → Queue → Role → Camouflage → End Round</div>
-        <div class="blog-item"><b>Next Goal</b>ทำ Catch System, Lobby Room และภาพประกอบเว็บให้ครบชุด</div>
+        
       </div>
     </div>
   </div>
@@ -667,8 +562,8 @@ const flow = [
   {title:'Gameplay', img:'img-gameplay', text:'Hunter ตามหา ส่วน Hider ซ่อนหรือแปลงร่าง', items:['Hunter ค้นหา','Hider แปลงร่าง','จับเวลาก่อนจบรอบ']},
   {title:'Camouflage', img:'img-hider', text:'Hider แปลงเป็น Object ในแมพเพื่อหลบ Hunter', items:['เลือก Object','กดแปลงร่าง','กลับร่างเดิมเมื่อจบรอบ']},
   {title:'Catch System', img:'img-catch', text:'Hunter จับ Hider เมื่อเข้าเงื่อนไขที่กำหนด', items:['ตรวจระยะ','ตรวจเป้าหมาย','อัปเดตสถานะผู้เล่น']},
-  {title:'End Round', img:'img-roadmap', text:'สรุปผลและส่งทุกคนกลับ Lobby', items:['ประกาศผู้ชนะ','ล้าง Camouflage','เริ่มรอบถัดไป']},
-  {title:'Ranking', img:'img-roadmap', text:'ระบบคะแนนและอันดับสำหรับอัปเดตในอนาคต', items:['Win/Lose','Leaderboard','Weekly Event']}
+  {title:'End Round', img:'img-gameplay', text:'สรุปผลและส่งทุกคนกลับ Lobby', items:['ประกาศผู้ชนะ','ล้าง Camouflage','เริ่มรอบถัดไป']},
+  {title:'Ranking', img:'img-gameplay', text:'ระบบคะแนนและอันดับสำหรับอัปเดตในอนาคต', items:['Win/Lose','Leaderboard','Weekly Event']}
 ];
 
 const flowGrid = document.getElementById('flowGrid');
