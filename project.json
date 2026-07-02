@@ -1,19 +1,174 @@
 {
+  "hubName": "FriendHub",
   "game": "Hide & Seek Camouflage",
-  "gameTitleHtml": "HIDE & SEEK<br><span>CAMOUFLAGE</span>",
-  "kicker": "FRIENDHUB GAME SHOWCASE",
-  "heroText": "เว็บไซต์หลักของ FriendHub สำหรับโชว์เกมและโหมดต่าง ๆ โดยตอนนี้โฟกัสที่ Hide & Seek Camouflage",
+  "website": "https://focusnakub.github.io/FriendHub/",
   "version": "v0.3.4",
   "status": "Alpha",
-  "progress": 66,
-  "stats": {
-    "players": "5–7",
-    "playersLabel": "Players",
-    "hideTime": "30s",
-    "hideTimeLabel": "Hider Hide Time",
-    "hunterTime": "20s",
-    "hunterTimeLabel": "Hunter Memorize"
+  "progress": 64,
+  "kicker": "FRIENDHUB GAME SHOWCASE",
+  "titleHtml": "HIDE & SEEK<br><span>CAMOUFLAGE</span>",
+  "heroText": "เว็บไซต์หลักของ FriendHub สำหรับโชว์เกมและโหมดต่าง ๆ โดยตอนนี้โฟกัสที่ Hide & Seek Camouflage",
+  "stats": [
+    {
+      "value": "5–7",
+      "label": "Players"
+    },
+    {
+      "value": "30s",
+      "label": "Hider Hide Time"
+    },
+    {
+      "value": "20s",
+      "label": "Hunter Memorize"
+    }
+  ],
+  "showcases": {
+    "lobby": [
+      {
+        "title": "Lobby Room",
+        "text": "พื้นที่รอเริ่มเกมสำหรับผู้เล่น มีปุ่ม Queue และป้ายอธิบายกติกา",
+        "img": "img-lobby"
+      },
+      {
+        "title": "Queue Board",
+        "text": "กระดานแสดงจำนวนผู้เล่นที่พร้อม และสถานะเริ่มรอบ",
+        "img": "img-queue"
+      },
+      {
+        "title": "Update Board",
+        "text": "ป้ายอัปเดตและข้อมูลเวอร์ชันของเกม",
+        "img": "img-patch"
+      },
+      {
+        "title": "Spawn Area",
+        "text": "จุดเกิดสำหรับส่งผู้เล่นเข้าแมพหลัก",
+        "img": "img-map"
+      }
+    ],
+    "gameplay": [
+      {
+        "title": "Main Gameplay",
+        "text": "Hunter ตามหา ส่วน Hider ซ่อนหรือแปลงเป็นสิ่งของในแมพ",
+        "img": "img-gameplay"
+      },
+      {
+        "title": "Hunter Search",
+        "text": "Hunter ใช้การสังเกตเพื่อหาผู้เล่นที่ซ่อนอยู่",
+        "img": "img-hunter"
+      },
+      {
+        "title": "Hider Camouflage",
+        "text": "Hider แปลงเป็นพุ่มไม้หรือของตกแต่งเพื่อหลอก Hunter",
+        "img": "img-hider"
+      },
+      {
+        "title": "Catch Moment",
+        "text": "ช่วงที่ Hunter จับ Hider ได้สำเร็จ",
+        "img": "img-catch"
+      }
+    ]
   },
+  "flow": [
+    {
+      "title": "1. Lobby",
+      "img": "img-lobby",
+      "text": "จุดเริ่มต้นของผู้เล่นทุกคน ก่อนเริ่มรอบจริง ผู้เล่นจะอยู่ใน Lobby เพื่อรอเพื่อน อ่านกติกา และเตรียมตัวเข้าคิว",
+      "items": [
+        "ผู้เล่นเข้ามารวมตัวในพื้นที่ปลอดภัย",
+        "ใช้เป็นจุดอธิบายกติกาและป้ายอัปเดต",
+        "มีปุ่มหรือจุดสำหรับเข้า Queue",
+        "เมื่อกดพร้อม ระบบจะส่งผู้เล่นไปขั้น Queue"
+      ]
+    },
+    {
+      "title": "2. Queue",
+      "img": "img-queue",
+      "text": "ระบบ Queue ใช้เก็บรายชื่อผู้เล่นที่พร้อมเริ่มเกม และนับจำนวนคนให้ครบตามเงื่อนไขก่อนเริ่มรอบ",
+      "items": [
+        "ผู้เล่นกดเข้าคิวเพื่อแสดงว่าพร้อมเล่น",
+        "ระบบนับจำนวนผู้เล่น เช่น 5/7",
+        "อัปเดตจำนวนคนผ่าน UI แบบเรียลไทม์",
+        "ถ้าผู้เล่นครบ ระบบจะเริ่ม Start Round"
+      ]
+    },
+    {
+      "title": "3. Start Round",
+      "img": "img-map",
+      "text": "ช่วงเตรียมรอบใหม่ ระบบจะล้างสถานะเก่าของผู้เล่น เทเลพอร์ตเข้าสู่พื้นที่เล่น และเตรียมสุ่มบทบาท",
+      "items": [
+        "ล้างสถานะจากรอบก่อน",
+        "เทเลพอร์ตผู้เล่นไปยังจุด Spawn ที่ถูกต้อง",
+        "เตรียม Round State ให้พร้อม",
+        "ส่งต่อไปยังระบบ Random Role"
+      ]
+    },
+    {
+      "title": "4. Random Role",
+      "img": "img-hunter",
+      "text": "ระบบสุ่มบทบาทเพื่อแบ่งผู้เล่นออกเป็น Hunter และ Hider โดยปกติจะมี Hunter 1 คน และผู้เล่นที่เหลือเป็น Hider",
+      "items": [
+        "สุ่ม Hunter จากผู้เล่นใน Queue",
+        "ผู้เล่นที่เหลือถูกกำหนดเป็น Hider",
+        "ส่ง Role UI ให้แต่ละคนรู้บทบาทของตัวเอง",
+        "กำหนดเงื่อนไขการชนะของแต่ละฝ่าย"
+      ]
+    },
+    {
+      "title": "5. Hider Hide Phase",
+      "img": "img-hider",
+      "text": "ช่วงที่ Hider มีเวลาเตรียมตัว ซ่อนตัว หรือเลือกตำแหน่งใกล้ Object สำหรับแปลงร่างก่อน Hunter เริ่มตามหา",
+      "items": [
+        "Hider มีเวลาซ่อนประมาณ 30 วินาที",
+        "เลือกจุดซ่อนที่กลมกลืนกับแมพ",
+        "เข้าใกล้ Object ที่สามารถใช้ Camouflage ได้",
+        "เตรียมแปลงเป็น Bush, Flower, Clover หรือ Prop อื่น ๆ"
+      ]
+    },
+    {
+      "title": "6. Hunter Search Phase",
+      "img": "img-gameplay",
+      "text": "หลังจากหมดเวลาซ่อน Hunter จะเริ่มออกตามหา Hider โดยใช้การสังเกตความผิดปกติของฉากและ Object ในแมพ",
+      "items": [
+        "Hunter เริ่มค้นหาหลังช่วงเตรียมตัว",
+        "สังเกต Object ที่ดูผิดตำแหน่งหรือผิดปกติ",
+        "เดินสำรวจจุดซ่อนและพื้นที่สำคัญ",
+        "พยายามเข้าใกล้ Hider เพื่อใช้ Catch System"
+      ]
+    },
+    {
+      "title": "7. Camouflage System",
+      "img": "img-hider",
+      "text": "ระบบหลักของเกมที่ทำให้ Hider แปลงเป็นสิ่งของในแมพ เพื่อหลอก Hunter และเพิ่มความสนุกในการซ่อนหา",
+      "items": [
+        "ตรวจว่า Hider อยู่ใกล้ Object ที่แปลงได้หรือไม่",
+        "กดปุ่มเพื่อแปลงเป็น Object เช่น Bush หรือ Flower",
+        "ซ่อนตัวให้กลมกลืนกับฉาก",
+        "เมื่อจบรอบ ระบบต้องล้างร่างปลอมออกทั้งหมด"
+      ]
+    },
+    {
+      "title": "8. Catch System",
+      "img": "img-catch",
+      "text": "ระบบจับของ Hunter ใช้ตรวจระยะและสถานะเป้าหมาย เพื่อดูว่าการจับ Hider สำเร็จหรือไม่",
+      "items": [
+        "ตรวจระยะระหว่าง Hunter กับ Hider",
+        "ตรวจว่าเป้าหมายยังอยู่ในสถานะเล่นอยู่",
+        "ถ้าจับสำเร็จ Hider จะถูกนับว่าแพ้หรือออกจากรอบ",
+        "ระบบส่งผลกลับไปยัง Round Manager"
+      ]
+    },
+    {
+      "title": "9. End Round",
+      "img": "img-gameplay",
+      "text": "เมื่อหมดเวลา หรือ Hider ถูกจับครบ ระบบจะสรุปผลผู้ชนะ ล้างสถานะ และส่งทุกคนกลับ Lobby เพื่อเตรียมรอบถัดไป",
+      "items": [
+        "เช็กเงื่อนไขจบรอบ เช่น หมดเวลา หรือ Hider ถูกจับหมด",
+        "ประกาศว่าฝ่าย Hunter หรือ Hider ชนะ",
+        "ล้าง Camouflage และสถานะผู้เล่น",
+        "ส่งผู้เล่นกลับ Lobby เพื่อเริ่มรอบใหม่"
+      ]
+    }
+  ],
   "statusItems": [
     {
       "icon": "✅",
@@ -28,6 +183,12 @@
       "className": "done-text"
     },
     {
+      "icon": "✅",
+      "title": "Camouflage Base",
+      "description": "ระบบแปลงร่างพื้นฐานใช้งานได้",
+      "className": "done-text"
+    },
+    {
       "icon": "🔄",
       "title": "Catch System",
       "description": "กำลังปรับระบบจับให้สมบูรณ์",
@@ -35,8 +196,8 @@
     },
     {
       "icon": "⏳",
-      "title": "Ranking / Weekly Event",
-      "description": "ระบบคะแนนและอีเวนต์ในอนาคต",
+      "title": "Win / Lose",
+      "description": "เงื่อนไขจบรอบและประกาศผู้ชนะ",
       "className": "later-text"
     }
   ],
@@ -70,98 +231,6 @@
     {
       "title": "Developer Update #1",
       "text": "โฟกัสระบบหลักให้เล่นได้ก่อน: Lobby → Queue → Role → Camouflage → End Round"
-    }
-  ],
-  "flow": [
-    {
-      "title": "1. Lobby",
-      "img": "img-lobby",
-      "text": "ผู้เล่นเข้ามารอใน Lobby ก่อนเริ่มเกม",
-      "items": [
-        "พื้นที่พักก่อนเริ่ม",
-        "กดเข้า Queue",
-        "อ่านกติกา"
-      ]
-    },
-    {
-      "title": "2. Queue",
-      "img": "img-queue",
-      "text": "ผู้เล่นกดพร้อมและระบบรอจำนวนคนครบ",
-      "items": [
-        "นับจำนวนผู้เล่น",
-        "อัปเดต UI",
-        "เริ่มรอบเมื่อครบ"
-      ]
-    },
-    {
-      "title": "3. Start Round",
-      "img": "img-map",
-      "text": "ระบบเริ่มรอบใหม่ ล้างสถานะเก่า และเตรียมสุ่มบทบาท",
-      "items": [
-        "ล้างสถานะรอบก่อน",
-        "เทเลพอร์ตผู้เล่น",
-        "เตรียม Round State"
-      ]
-    },
-    {
-      "title": "4. Random Role",
-      "img": "img-hunter",
-      "text": "สุ่ม Hunter และ Hider จากผู้เล่นในรอบ",
-      "items": [
-        "เลือก Hunter",
-        "กำหนด Hider",
-        "แจ้ง Role UI"
-      ]
-    },
-    {
-      "title": "5. Hider Hide Phase",
-      "img": "img-hider",
-      "text": "Hider มีเวลาเตรียมตัว ซ่อนตัว หรือเลือกตำแหน่งสำหรับแปลงร่าง",
-      "items": [
-        "ซ่อนประมาณ 30 วินาที",
-        "เลือก Object ใกล้ตัว",
-        "เตรียม Camouflage"
-      ]
-    },
-    {
-      "title": "6. Hunter Search Phase",
-      "img": "img-gameplay",
-      "text": "Hunter เริ่มออกตามหา Hider โดยสังเกตความผิดปกติของฉาก",
-      "items": [
-        "ค้นหาตามจุดซ่อน",
-        "สังเกต Object ผิดปกติ",
-        "เข้าใกล้เพื่อจับ"
-      ]
-    },
-    {
-      "title": "7. Camouflage System",
-      "img": "img-hider",
-      "text": "Hider แปลงเป็นสิ่งของในแมพเพื่อหลอก Hunter",
-      "items": [
-        "ตรวจ Object ใกล้ตัว",
-        "กดแปลงร่าง",
-        "ล้างร่างปลอมเมื่อจบรอบ"
-      ]
-    },
-    {
-      "title": "8. Catch System",
-      "img": "img-catch",
-      "text": "ระบบจับของ Hunter ใช้ตรวจระยะและสถานะเป้าหมาย",
-      "items": [
-        "ตรวจระยะ",
-        "ตรวจเป้าหมาย",
-        "ส่งผลไปยัง Round Manager"
-      ]
-    },
-    {
-      "title": "9. End Round",
-      "img": "img-gameplay",
-      "text": "เมื่อหมดเวลา หรือ Hider ถูกจับครบ ระบบจะสรุปผลและส่งทุกคนกลับ Lobby",
-      "items": [
-        "ประกาศผู้ชนะ",
-        "ล้างสถานะ",
-        "กลับ Lobby"
-      ]
     }
   ]
 }
