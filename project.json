@@ -1,0 +1,167 @@
+{
+  "game": "Hide & Seek Camouflage",
+  "gameTitleHtml": "HIDE & SEEK<br><span>CAMOUFLAGE</span>",
+  "kicker": "FRIENDHUB GAME SHOWCASE",
+  "heroText": "เว็บไซต์หลักของ FriendHub สำหรับโชว์เกมและโหมดต่าง ๆ โดยตอนนี้โฟกัสที่ Hide & Seek Camouflage",
+  "version": "v0.3.4",
+  "status": "Alpha",
+  "progress": 64,
+  "stats": {
+    "players": "5–7",
+    "playersLabel": "Players",
+    "hideTime": "30s",
+    "hideTimeLabel": "Hider Hide Time",
+    "hunterTime": "20s",
+    "hunterTimeLabel": "Hunter Memorize"
+  },
+  "statusItems": [
+    {
+      "icon": "✅",
+      "title": "Lobby / Queue",
+      "description": "ระบบรอผู้เล่นและเริ่มรอบ",
+      "className": "done-text"
+    },
+    {
+      "icon": "✅",
+      "title": "Random Role",
+      "description": "สุ่ม Hunter และ Hider",
+      "className": "done-text"
+    },
+    {
+      "icon": "🔄",
+      "title": "Catch System",
+      "description": "กำลังปรับระบบจับให้สมบูรณ์",
+      "className": "doing-text"
+    },
+    {
+      "icon": "⏳",
+      "title": "Ranking / Weekly Event",
+      "description": "ระบบคะแนนและอีเวนต์ในอนาคต",
+      "className": "later-text"
+    }
+  ],
+  "patchNotes": [
+    {
+      "version": "v0.3.4",
+      "changes": [
+        "+ Queue Count UI",
+        "+ Cleanup Camouflage",
+        "- แก้ปัญหา Spawn / Teleport บางส่วน"
+      ]
+    },
+    {
+      "version": "v0.3.3",
+      "changes": [
+        "+ Role UI",
+        "+ Random Hunter/Hider",
+        "+ Round State"
+      ]
+    },
+    {
+      "version": "v0.3.0",
+      "changes": [
+        "+ Camouflage Objects",
+        "+ Transform UI",
+        "+ ระบบใกล้ Object เพื่อแปลงร่าง"
+      ]
+    }
+  ],
+  "devBlog": [
+    {
+      "title": "Developer Update #1",
+      "text": "โฟกัสระบบหลักให้เล่นได้ก่อน: Lobby → Queue → Role → Camouflage → End Round"
+    }
+  ],
+  "flow": [
+    {
+      "title": "1. Lobby",
+      "img": "img-lobby",
+      "text": "ผู้เล่นเข้ามารอใน Lobby ก่อนเริ่มเกม",
+      "items": [
+        "พื้นที่พักก่อนเริ่ม",
+        "กดเข้า Queue",
+        "อ่านกติกา"
+      ]
+    },
+    {
+      "title": "2. Queue",
+      "img": "img-queue",
+      "text": "ผู้เล่นกดพร้อมและระบบรอจำนวนคนครบ",
+      "items": [
+        "นับจำนวนผู้เล่น",
+        "อัปเดต UI",
+        "เริ่มรอบเมื่อครบ"
+      ]
+    },
+    {
+      "title": "3. Start Round",
+      "img": "img-map",
+      "text": "ระบบเริ่มรอบใหม่ ล้างสถานะเก่า และเตรียมสุ่มบทบาท",
+      "items": [
+        "ล้างสถานะรอบก่อน",
+        "เทเลพอร์ตผู้เล่น",
+        "เตรียม Round State"
+      ]
+    },
+    {
+      "title": "4. Random Role",
+      "img": "img-hunter",
+      "text": "สุ่ม Hunter และ Hider จากผู้เล่นในรอบ",
+      "items": [
+        "เลือก Hunter",
+        "กำหนด Hider",
+        "แจ้ง Role UI"
+      ]
+    },
+    {
+      "title": "5. Hider Hide Phase",
+      "img": "img-hider",
+      "text": "Hider มีเวลาเตรียมตัว ซ่อนตัว หรือเลือกตำแหน่งสำหรับแปลงร่าง",
+      "items": [
+        "ซ่อนประมาณ 30 วินาที",
+        "เลือก Object ใกล้ตัว",
+        "เตรียม Camouflage"
+      ]
+    },
+    {
+      "title": "6. Hunter Search Phase",
+      "img": "img-gameplay",
+      "text": "Hunter เริ่มออกตามหา Hider โดยสังเกตความผิดปกติของฉาก",
+      "items": [
+        "ค้นหาตามจุดซ่อน",
+        "สังเกต Object ผิดปกติ",
+        "เข้าใกล้เพื่อจับ"
+      ]
+    },
+    {
+      "title": "7. Camouflage System",
+      "img": "img-hider",
+      "text": "Hider แปลงเป็นสิ่งของในแมพเพื่อหลอก Hunter",
+      "items": [
+        "ตรวจ Object ใกล้ตัว",
+        "กดแปลงร่าง",
+        "ล้างร่างปลอมเมื่อจบรอบ"
+      ]
+    },
+    {
+      "title": "8. Catch System",
+      "img": "img-catch",
+      "text": "ระบบจับของ Hunter ใช้ตรวจระยะและสถานะเป้าหมาย",
+      "items": [
+        "ตรวจระยะ",
+        "ตรวจเป้าหมาย",
+        "ส่งผลไปยัง Round Manager"
+      ]
+    },
+    {
+      "title": "9. End Round",
+      "img": "img-gameplay",
+      "text": "เมื่อหมดเวลา หรือ Hider ถูกจับครบ ระบบจะสรุปผลและส่งทุกคนกลับ Lobby",
+      "items": [
+        "ประกาศผู้ชนะ",
+        "ล้างสถานะ",
+        "กลับ Lobby"
+      ]
+    }
+  ]
+}
