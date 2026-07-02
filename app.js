@@ -65,7 +65,6 @@ function renderFlow(){
       <div class="num">${i+1}</div>
       <div class="thumb ${f.img}"></div>
       <h4>${f.title}</h4>
-      <p>${f.text}</p>
     </div>
   `).join("");
   selectFlow(0, document.querySelector(".flow-card"));

@@ -195,3 +195,29 @@ h1 span{color:#4ade80;text-shadow:0 0 30px rgba(74,222,128,.45)}
   .flow-card .thumb{height:56px}
   .flow-preview-body h3{font-size:26px}
 }
+
+
+/* FriendHub v2.3 - Clean Flow Cards (no descriptions on left) */
+.flow-card{
+  grid-template-columns:42px 96px 1fr;
+  min-height:92px;
+  padding:12px 14px;
+}
+.flow-card p{display:none!important;}
+.flow-card h4{
+  margin:0;
+  font-size:17px;
+  line-height:1.25;
+}
+.flow-card .thumb{
+  height:62px;
+  border-radius:14px;
+}
+.flow-grid{
+  max-height:680px;
+}
+@media(max-width:640px){
+  .flow-card{grid-template-columns:38px 78px 1fr;min-height:78px;padding:10px;}
+  .flow-card .thumb{height:52px;}
+  .flow-card h4{font-size:15px;}
+}
