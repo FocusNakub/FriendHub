@@ -66,15 +66,20 @@
 <section class="section reveal" id="flow">
   <div class="section-head">
     <h2>🧭 Interactive Game Flow</h2>
-    <p>กดแต่ละขั้นเพื่อดูรายละเอียดของระบบในรอบการเล่น ตั้งแต่ผู้เล่นเข้าล็อบบี้ การเข้าคิว การสุ่มบทบาท การซ่อน การตามหา ไปจนถึงการจบรอบและสรุปผล</p>
+    <p>แตะการ์ดด้านซ้ายเพื่อดูภาพใหญ่และรายละเอียดของแต่ละขั้นตอน ตั้งแต่ Lobby, Queue, Role, Camouflage ไปจนถึง End Round</p>
   </div>
-  <div class="flow-grid" id="flowGrid"></div>
-  <div class="detail-panel">
-    <div id="flowDetailImg" class="detail-image img-lobby"></div>
-    <div class="detail-text">
-      <h3 id="flowDetailTitle">Loading...</h3>
-      <p id="flowDetailText">Loading...</p>
-      <div class="list" id="flowDetailList"></div>
+
+  <div class="flow-showcase">
+    <div class="flow-grid" id="flowGrid"></div>
+
+    <div class="flow-preview">
+      <div id="flowDetailImg" class="flow-preview-image img-lobby"></div>
+      <div class="flow-preview-body">
+        <div class="flow-badge">GAMEPLAY STEP</div>
+        <h3 id="flowDetailTitle">Loading...</h3>
+        <p id="flowDetailText">Loading...</p>
+        <div class="list" id="flowDetailList"></div>
+      </div>
     </div>
   </div>
 </section>

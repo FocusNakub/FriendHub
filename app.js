@@ -76,10 +76,17 @@ function selectFlow(i, el){
   if(el) el.classList.add("active");
   const f = flow[i];
   if(!f) return;
-  document.getElementById("flowDetailImg").className = "detail-image " + f.img;
-  document.getElementById("flowDetailTitle").textContent = f.title;
-  document.getElementById("flowDetailText").textContent = f.text;
-  document.getElementById("flowDetailList").innerHTML = f.items.map(x => `<div class="item" onclick="this.classList.toggle('active')">✅ ${x}</div>`).join("");
+
+  const img = document.getElementById("flowDetailImg");
+  img.classList.add("changing");
+
+  setTimeout(() => {
+    img.className = "flow-preview-image " + f.img;
+    document.getElementById("flowDetailTitle").textContent = f.title;
+    document.getElementById("flowDetailText").textContent = f.text;
+    document.getElementById("flowDetailList").innerHTML = f.items.map(x => `<div class="item">✅ ${x}</div>`).join("");
+    img.classList.remove("changing");
+  }, 130);
 }
 
 function renderPatch(){

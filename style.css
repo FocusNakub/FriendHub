@@ -52,3 +52,146 @@ h1 span{color:#4ade80;text-shadow:0 0 30px rgba(74,222,128,.45)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.reveal{animation:fadeUp .7s ease both}
 @media(max-width:980px){.topnav{display:none}.stats,.showcase,.detail-panel,.proto-detail{grid-template-columns:1fr}.flow-grid,.gallery-grid{grid-template-columns:1fr 1fr}.section{padding:70px 20px}.hero{padding:80px 20px}}
 @media(max-width:640px){.flow-grid,.gallery-grid{grid-template-columns:1fr}}
+
+
+
+/* FriendHub v2.2 - Interactive Game Flow Preview */
+.flow-showcase{
+  display:grid;
+  grid-template-columns:.95fr 1.35fr;
+  gap:22px;
+  align-items:stretch;
+}
+.flow-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  max-height:720px;
+  overflow:auto;
+  padding-right:6px;
+}
+.flow-grid::-webkit-scrollbar{width:8px}
+.flow-grid::-webkit-scrollbar-thumb{
+  background:rgba(96,165,250,.35);
+  border-radius:999px;
+}
+.flow-card{
+  background:rgba(15,23,42,.78);
+  border:1px solid rgba(148,163,184,.22);
+  border-radius:22px;
+  padding:14px;
+  cursor:pointer;
+  transition:.22s;
+  display:grid;
+  grid-template-columns:46px 86px 1fr;
+  gap:14px;
+  align-items:center;
+}
+.flow-card:hover,.flow-card.active{
+  transform:translateY(-3px);
+  border-color:rgba(96,165,250,.72);
+  box-shadow:0 0 30px rgba(96,165,250,.22);
+  background:rgba(30,41,59,.88);
+}
+.flow-card .num{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  background:#2563eb;
+  font-weight:900;
+}
+.flow-card .thumb{
+  height:64px;
+  border-radius:14px;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(148,163,184,.22);
+}
+.flow-card h4{
+  margin:0 0 5px;
+  font-size:16px;
+}
+.flow-card p{
+  margin:0;
+  color:#cbd5e1;
+  font-size:13px;
+  line-height:1.4;
+}
+.flow-preview{
+  background:rgba(15,23,42,.78);
+  border:1px solid rgba(148,163,184,.22);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,.28);
+  min-height:720px;
+  position:sticky;
+  top:90px;
+}
+.flow-preview-image{
+  height:390px;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  transition:opacity .25s ease, transform .25s ease;
+}
+.flow-preview-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent,rgba(2,6,23,.55));
+}
+.flow-preview-image.changing{
+  opacity:.45;
+  transform:scale(1.015);
+}
+.flow-preview-body{
+  padding:26px;
+}
+.flow-badge{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  color:#93c5fd;
+  background:rgba(37,99,235,.16);
+  border:1px solid rgba(96,165,250,.28);
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+.flow-preview-body h3{
+  margin:0 0 10px;
+  font-size:32px;
+}
+.flow-preview-body p{
+  color:#cbd5e1;
+  line-height:1.65;
+  margin:0;
+  font-size:16px;
+}
+.flow-preview .list{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+.flow-preview .item{
+  background:rgba(148,163,184,.1);
+  border:1px solid rgba(148,163,184,.14);
+  border-radius:14px;
+  padding:12px;
+  color:#dbeafe;
+}
+@media(max-width:980px){
+  .flow-showcase{grid-template-columns:1fr}
+  .flow-preview{position:relative;top:0;min-height:auto}
+  .flow-preview-image{height:280px}
+  .flow-grid{max-height:none}
+}
+@media(max-width:640px){
+  .flow-card{grid-template-columns:40px 72px 1fr;gap:10px}
+  .flow-card .thumb{height:56px}
+  .flow-preview-body h3{font-size:26px}
+}
