@@ -1,0 +1,37 @@
+name: Discord Website Update
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Discord Embed
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d '{
+            "username": "Hide & Seek Dev Bot",
+            "embeds": [{
+              "title": "🎮 Hide & Seek Camouflage — Website Updated",
+              "description": "มีการอัปเดตเว็บไซต์แล้ว",
+              "color": 3447003,
+              "fields": [
+                {
+                  "name": "🌐 Website",
+                  "value": "https://focusnakub.github.io/FriendHub/"
+                },
+                {
+                  "name": "📦 Repository",
+                  "value": "FriendHub"
+                }
+              ]
+            }]
+          }' \
+          "$DISCORD_WEBHOOK"
