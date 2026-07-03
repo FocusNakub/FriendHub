@@ -10,12 +10,12 @@
   "heroText": "เว็บไซต์หลักของ FriendHub สำหรับโชว์เกมและโหมดต่าง ๆ โดยตอนนี้โฟกัสที่ Hide & Seek Camouflage",
   "stats": [
     {
-      "value": "5–7",
+      "value": "2–10",
       "label": "Players"
     },
     {
-      "value": "30s",
-      "label": "Hider Hide Time"
+      "value": "120s",
+      "label": "Play Time"
     },
     {
       "value": "20s",
